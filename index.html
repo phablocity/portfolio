@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <title>Pablo Aleluya - Portfolio</title>
+</head>
+
+<body>
+    
+    <!-- BARRA DE NAVEGACION -->
+    <nav id="menu">
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#conocimientos">Conocimientos</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <!-- MENU HAMBURGUESA -->
+    <ul class="menu-burger">
+        <li><a href="#"><i class="fa-solid fa-bars"></i></a>
+            <ul class="submenu">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#conocimientos">Conocimientos</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </li>
+    </ul>
+
+    <!-- SECCION INICIO -->
+    <section id="inicio">
+        <div class="inicio-container">
+            <img src="./img/man.png" alt="foto perfil">
+            <div class="inicio-text">
+                <h2>Pablo Aleluya</h2>
+                <p>Bienvenido a mi portfolio. Aca podras conocer mas sobre mis proyectos y habilidades.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CONOCIMIENTOS -->
+    <section id="conocimientos">
+        <h3 class="titulo">Conocimientos</h3>
+        <hr>
+        <div class="fila">
+
+            <div class="col">
+                <i class="fa-brands fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, magni!</p>
+            </div>
+
+            <div class="col">
+                <i class="fa-brands fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, magni!</p>
+            </div>
+
+            <div class="col">
+                <i class="fa-brands fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore, magni!</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCION PROYECTOS -->
+    <section id="proyectos">
+        <h3 class="titulo">Proyectos</h3>
+        <hr>
+        <div class="fila">
+            <div class="col">
+                <div class="proyecto-titulo">Proyecto 1</div>
+                <img src="./img/folder.png" alt="proyecto 1">
+            </div>
+            <div class="col">
+                <div class="proyecto-titulo">Proyecto 2</div>
+                <img src="./img/folder.png" alt="proyecto 2">
+            </div>
+            <div class="col">
+                <div class="proyecto-titulo">Proyecto 3</div>
+                <img src="./img/folder.png" alt="proyecto 3">
+            </div>
+        </div>
+
+        <div class="fila">
+            <div class="col">
+                <div class="proyecto-titulo">Proyecto 4</div>
+                <img src="./img/folder.png" alt="proyecto 4">
+            </div>
+            <div class="col">
+                <div class="proyecto-titulo">Proyecto 5</div>
+                <img src="./img/folder.png" alt="proyecto 5">
+            </div>
+            <div class="col">
+                <div class="proyecto-titulo">Proyecto 6</div>
+                <img src="./img/folder.png" alt="proyecto 6">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION CONTACTO -->
+    <section id="contacto">
+        <div class="contacto-container">
+            
+            <div class="contacto-info">
+                <h2>Contacto</h2>
+                <p>No dudes en enviarme tu mensaje!</p>
+            </div>
+            
+            <!-- FORMULARIO DE CONTACTO -->
+            <div class="contacto-formulario">
+
+                <form>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre..." required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Escribe tu correo..." required>
+
+                    <label for="mensaje">Mensaje</label>
+                    <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Escribe tu mensaje..."></textarea>
+
+                    <input type="submit" value="Enviar">
+                </form>
+                
+                <div class="redes-sociales">
+                    <h3>Sigueme en las redes sociales</h3>
+                    <a href="#"><img src="./img/facebook.png" alt="facebook"></a>
+                    <a href="#"><img src="./img/instagram.png" alt="instagram"></a>
+                    <a href="#"><img src="./img/twitter.png" alt="twitter"></a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCION PIE DE PAGINA -->
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#conocimientos">Conocimientos</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+        <div class="redes-sociales-footer">
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            <a href="#"><i class="fa-solid fa-globe"></i></a>
+        </div>
+        <p>Realizado por Pablo Aleluya</p>
+    </footer>
+
+</body>
+</html>

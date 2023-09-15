@@ -1,0 +1,407 @@
+/* ESTILOS GLOBALES */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Animacion suave para el desplazamiento vertical */
+}
+
+body {
+    background-color: #f0f0f0;
+}
+
+/* ESTILOS DE LA BARRA DE NAVEGACION */
+#menu {
+    background-color: #333;
+    color: #fff;
+    position: fixed; /* Fijar en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Capa superior */
+}
+
+#menu ul {
+    list-style: none; /* Eliminar viñetas */
+    display: flex; /* Mostrar en linea */
+    justify-content: right; /* Alinear a la derecha */
+    background-color: #2b2d41;
+    padding: 10px;
+    margin: 0;
+}
+
+#menu li {
+    margin-right: 20px; /* Espacio entre los elemenos del menu */
+}
+
+/* ENLACES */
+#menu a {
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none; /* Eliminar subrayado */
+    transition: color 0.3s ease; /* Transicion de color suave */
+}
+
+#menu a:hover {
+    color: #fe4b57; /* Color de texto al pasar el mouse */
+}
+
+/* ESTILOS PARA EL MENU HAMBURGUESA */
+.menu-burger {
+    display: none; /* No mostrar en pantalla grande */
+    position: fixed; /* Fijar en la parte superior */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Capa superior */
+}
+
+.menu-burger > li {
+    display: block; /* Mostrar en bloques para que aparezcan uno debajo del otro */
+    text-align: center; /* Centrar texto dentro de cada elemento del menu */
+}
+
+/* ESTILOS PARA EL ICONO DEL MENU HAMBURGUESA */
+.menu-burger i {
+    color: #fff;
+    padding: 15px;
+    background-color: #fe4b57;
+}
+
+/* ESTILOS PARA LOS ENLACES DEL MENU HAMBURGUESA */
+.menu-burger a {
+    display: block; /* Mostrar en bloques para ocupar todo el ancho disponible */
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none; /* Eliminar subrayado */
+    transition: color 0.3s ease; /* Transicion de color suave */
+    text-align: center;
+}
+
+.menu-burger li ul {
+    padding: 0; /* Eliminar de la lista cualquier espacio innecesario */
+}
+
+/* ESTILOS PARA EL DESPLEGABLE DEL MENU HAMBURGUESA */
+.menu-burger .submenu {
+    display: none; /* Ocultar de desplegable de manera predeterminada */
+    position: absolute; /* Posicion absoluta para superponer sobre el contenido */
+    background-color: #2b2d41;
+    width: 200px;
+    padding: 15px;
+    border: 2px solid #fe4b57;
+}
+
+.menu-burger .submenu li {
+    display: block; /* Mostrar en bloques para ocupar todo el ancho disponible */
+    text-align: center;
+}
+
+.menu-burger > li:hover .submenu {
+    display: block; /* Mostrar desplegable al pasar el mouse sobre elemento padre */
+}
+
+.menu-burger a:hover {
+    color: #fe4b57; /* Cambiar color del texto al pasar el mouse sobre un enlace */
+}
+
+/* ESTILOS PARA LA SECCION INICIO */
+#inicio {
+    background-color: #fff;
+    padding: 40px;
+}
+
+.inicio-container {
+    display: flex; /* Alinear horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+}
+
+.inicio-container img {
+    max-width: 50%; /* Limitar ancho maxico de la imagen al 50% del contenedor */
+    height: auto; /* Mantener aspecto de la imagen ajustando automaticamente la altura */
+}
+
+.inicio-text {
+    flex: 1; /* Permitir que el texto ocupe todo el espacio disponible horizontalmente */
+    padding: 20px;
+}
+
+.inicio-text h2 {
+    font-size: 24px;
+    margin-bottom: 10px; /* Margen inferior para separar el titulo del parrafo siguiente */
+}
+
+.inicio-text p {
+    font-size: 16px;
+}
+
+/* ESTILOS PARA LA SECCION CONOCIMIENTOS Y PROYECTOS */
+#conocimientos,
+#proyectos {
+    display: flex; /* Usar caja flexible para organizar elementos en columna */
+    flex-direction: column; /* Mostrar en columna */
+    justify-content: center; /* Centrar verticalmente elementos en el contenedor */
+    background-color: #212336;
+    padding: 5%;
+}
+
+.titulo {
+    color: #fe4b57;
+    font-size: 30px;
+    margin-bottom: 10px;;
+    padding: 0 40px;
+}
+
+#conocimientos hr,
+#proyectos hr {
+    width: 50px;
+    border: 2px solid #fe4b57;;
+    margin-bottom: 10px;
+    margin-left: 40px;
+}
+
+.fila {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.col {
+    color: #fff;
+    width: 30%;
+    background-color: #2b2d41;
+    padding: 25px;
+    position: relative;
+}
+
+
+
+/* Estilos para los títulos de los proyectos */
+#proyectos .proyecto-titulo {
+    position: absolute;
+    top: 50%; /* Coloca el título en el centro verticalmente */
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+    color: #fff;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%); /* Centra verticalmente el título */
+    opacity: 0; /* Inicialmente, el título estará oculto */
+    transition: opacity 0.3s ease; /* Transición suave para la opacidad */
+}
+
+#proyectos .col:hover .proyecto-titulo {
+    opacity: 1; /* Mostrar el título al pasar el mouse sobre el proyecto */
+}
+
+
+#proyectos .fila .col {
+    display: flex;
+    justify-content: center;
+}
+
+.col i {
+    color: #fe4b57;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.col h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.col p {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.col img {
+    align-items: center;
+    width: 200px;
+}
+
+/* ESTILOS PARA LA SECCION CONTACTO */
+#contacto {
+    background-color: #f0f0f0;
+    padding: 40px;
+    text-align: center;
+}
+
+.contacto-container {
+    display: flex;
+    align-items: center;
+}
+
+.contacto-info {
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contacto-info p {
+    font-size: 16px;
+}
+
+.contacto-info h2 {
+    font-size: 24px;
+    margin-top: 20px;
+}
+
+.contacto-formulario {
+    text-align: left;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.contacto-formulario h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.contacto-formulario label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.contacto-formulario input[type="text"],
+.contacto-formulario input[type="email"],
+.contacto-formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.contacto-formulario input[type="submit"] {
+    background-color: #fe4b57;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.contacto-formulario input[type="submit"]:hover {
+    background-color: #212336;
+}
+
+.redes-sociales {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+.redes-sociales h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.redes-sociales a {
+    margin-right: 10px;
+}
+
+.redes-sociales img {
+    width: 24px;
+    height: 24px;
+}
+
+/* ESTILOS PARA EL FOOTER */
+footer {
+    background-color: #2b2d41;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer nav ul li a:hover {
+    color: #fe4b57; /* Color de texto al pasar el mouse */
+}
+
+.redes-sociales-footer {
+    margin-top: 20px;
+}
+
+.redes-sociales-footer a {
+    margin-right: 10px;
+}
+
+.redes-sociales-footer i {
+    color: #fe4b57;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.redes-sociales-footer i:hover {
+    color: #fff; /* Color de texto al pasar el mouse */
+}
+
+footer p {
+    margin-top: 20px;
+}
+
+/* ESTILOS PARA PANTALLAS CHICAS */
+@media screen and (max-width: 768px) {
+    .menu-burger {
+        display: flex;
+    }
+    
+    #menu {
+        display: none;
+    }
+
+    .fila {
+        display: block;
+    }
+
+    .col {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 10px;
+    }
+
+    #proyectos .fila {
+        margin-bottom: 0;
+    }
+
+    .contacto-container {
+        flex-direction: column;
+    }
+
+    .contacto-formulario,
+    .contacto-info,
+    .redes-sociales {
+        width: 100%;
+    }
+}
